@@ -1,0 +1,167 @@
+
+/*  Table view    */
+table.table-view {
+    width:100%;
+}
+
+table.table-view thead {
+    background-color: #5C8D1D;
+}
+
+table.table-view tbody {
+    background-color: #FFF6D3; 
+}
+
+table.table-view thead th, table.table-view tbody td {
+    width: max-content; 
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.table-view thead th {
+    border: solid #c9c9c9 1px;
+    color: white;
+    line-height: 15px;
+    font-size: 18px;
+}
+
+table.table-view thead th:hover {
+    cursor: pointer;
+    color: #8F7C48;
+    background-color: #FFF6D3;
+}
+
+table.table-view thead th.header-delete {
+    max-width: 30px;
+}
+
+table.table-view tbody td a.link-redirect {
+    color: blue;
+    opacity: 0.8;
+    font-weight: bold;
+}
+table.table-view tbody td a.link-redirect:hover {
+    color: darkblue;
+    opacity: 1;
+}
+
+table.table-view tbody li::before {
+    content:"";
+}
+
+/*  Table flex    */
+table.table-flex {
+    display: inline-flex;
+}
+
+table.table-flex thead, table.table-flex tbody  {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+table.table-flex tr {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+table.table-flex tr th, table.table-flex tr td {
+    font-size: 20px;
+    padding: 5px;
+}
+
+table.table-bordered {
+    border: solid 1px #8F7C48;
+    box-shadow: 0px 3px 7.5px .4px #8F7C48;
+}
+
+table.table-flex tbody td a {
+    color: blue;
+    opacity: 0.8;
+    font-weight: bold;
+}
+table.table-flex tbody td a:hover {
+    color: darkblue;
+    opacity: 1;
+}
+
+/*  Div flex    */
+div.div-flex {
+    display: flex;
+    width: 100%;
+}
+
+/*  Card    */
+.card {
+    max-width: 50%;
+    min-height: 1rem;
+    margin: 1.5rem auto;
+    padding: .25rem;
+}
+
+.card .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5C8D1D;
+    text-decoration: underline;
+    margin: .5rem;
+    margin-bottom: 1rem;
+}
+
+.card .card-content {
+    font-size: 16px;
+}
+
+div.div-bordered {  
+    border: solid 1px #8F7C48;
+    box-shadow: 0px 3px 7.5px .4px #8F7C48;
+}
+
+/*   Autres   */
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+main form > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 10px auto;
+}
+main form > ul, main form div > ul {
+    list-style: none;
+    color: darkred;
+}
+main form > ul li, main form div > ul li {
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+main form > ul li::before, main form div > ul li::before {
+    content: "";
+}
+
+main form > ul {
+    border: 1px solid red;
+    padding: 2px;
+}
+
+main form div > ul {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.w-100 {
+    width: 100%;
+}
+.w-50 {
+    width: 50%;
+}

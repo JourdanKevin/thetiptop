@@ -1,0 +1,178 @@
+.italic {
+    font-style: oblique;
+}
+
+.center{
+    text-align: center;
+}
+
+.click{
+    cursor: pointer;
+}
+
+.router-link-active{
+    color: map-get($primary, 7)
+}
+
+
+@each $number, $color in $primary {
+    .primary-#{$number} {
+      background-color: $color;
+    }
+  }
+
+@each $number, $color in $secondary {
+    .secondary-#{$number} {
+        background-color: $color;
+    }
+}
+
+@each $number, $color in $accept {
+    .accept-#{$number} {
+        background-color: $color;
+    }
+}
+
+@each $number, $color in $refuse {
+    .refuse-#{$number} {
+        background-color: $color;
+    }
+}
+
+@each $number, $color in $cFont {
+    .cFont-#{$number} {
+        color: $color;
+    }
+}
+
+@each $number, $color in $cFont {
+    .cFont-#{$number}:hover {
+        color: $color;
+    }
+}
+
+@each $number, $Font in $font {
+    .font-#{$number} {
+        font-family: $Font;
+    }
+}
+
+@each $number, $Size in $size {
+    .size-#{$number} {
+        font-size: $Size;
+    }
+    
+}
+
+
+.bold{
+    font-weight: bold;
+}
+
+
+.hover-1:hover{
+    filter: brightness(1.2);
+}
+
+.hover-2:hover{
+    filter: brightness(2);
+}
+
+.marge-1{
+    margin: 1rem 0;
+}
+
+.marge-2{
+    margin: 2rem 0;
+}
+
+.marge-left{
+    margin-left: 5rem;
+}
+
+.g-recaptcha{
+    margin-top: 1rem;
+}
+
+.prize{
+    margin-top: 3rem;
+    div{
+        width: 50%;
+        margin: auto;
+        img{
+            margin-top: 1rem;
+            width: 50%;
+            @media (max-width: 1000px) {   
+                width: 100%;
+            }
+        }
+    }
+}
+
+.fUpper {
+    text-transform: uppercase;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.noMarge{
+    margin: 0;
+}
+
+.noMin{
+    th,td {
+        @media (max-width: 1000px) {            
+            min-width: 32vw;
+        } 
+    }
+  
+}
+
+.vue-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    .vue-modal-inner {
+        max-width: 1000px;
+        margin: 2rem auto;
+        text-align: center;
+        .vue-modal-content {
+            
+            position: relative;
+            background: url('/public/images/lignes_fond.webp');
+            background-color:  map-get($primary, 4);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            background-clip: padding-box;
+            border-radius: 0.3rem;
+            padding: 1rem;
+          }
+      }
+  }
+  
+.page404{
+    width: 100%;
+    >div{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+            >img{
+                width: 40%;
+                @media (max-width: 1000px) {                
+                    width: 100%;    
+                }
+            }
+        
+    }
+}
+  
+ 

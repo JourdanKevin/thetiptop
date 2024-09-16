@@ -1,0 +1,3 @@
+the_tip_top ALL=(ALL) NOPASSWD: /usr/bin/apt
+the_tip_top ALL=(ALL) NOPASSWD: /usr/bin/apt-get
+the_tip_top ALL=(ALL) NOPASSWD: /bin/systemctl

@@ -1,0 +1,18 @@
+User-agent: *
+
+
+Disallow: /api/
+Disallow: /admin/ 
+Disallow: /var/
+Disallow: /vendor/
+Disallow: /tests/
+Disallow: /migrations/
+Disallow: /node_modules/
+Disallow: /assets/
+Disallow: /bin/
+Disallow: /docs/
+Disallow: /src/
+Disallow: /translations/
+Disallow: /.env
+
+Sitemap: https://www.dsp-archiwebo21-ap-al-fa-kj.fr/sitemap.xml

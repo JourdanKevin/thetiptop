@@ -1,0 +1,59 @@
+{# templates/app.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="robots" content="index,follow"> 
+    <meta name="description" content="{{ 'head.description'|trans }}">
+    <meta name="keywords" content="thé, ThéTipTop, jeu-concours, tirage au sort, infuseur à thé, thé détox, infusion, thé signature, coffret découverte, gains, promotion, boutique, Paris, Nice, tickets gagnants, participation, qualité, thé blanc, thé légumes, bios, Handmades, gagner, cadeaux, numéros, clients, événement, 30 jours">
+    <meta name="author" content="WebAgency FuriousDucks ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+
+
+    <!-- Open Graph / Facebook --  >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.thetiptop.com/">
+    <meta property="og:title" content="The Tip Top">
+    <meta property="og:description" content="{{ 'head.description'|trans }}">
+    <meta property="og:image" content="https://www.thetiptop.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.thetiptop.com/">
+    <meta property="twitter:title" content="The Tip Top">
+    <meta property="twitter:description" content="{{ 'head.description'|trans }}">
+    <meta property="twitter:image" content="https://www.thetiptop.com/images/twitter-image.jpg">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/LogoVersion1.web">
+    <link rel="icon" type="image/web" sizes="32x32" href="images/LogoVersion1.web">
+    <link rel="icon" type="image/web" sizes="16x16" href="images/LogoVersion1.web">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="icon" href="images/LogoVersion1.webp">
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YTZGFN5107"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YTZGFN5107');
+    </script>
+    <script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+    <body>
+      <div id="app">
+      </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+.faq {
+    width: 70%;
+
+    @media (max-width: 1015px) { // Cela cible les écrans ayant une largeur maximale de 1015px
+        width: 100%;
+    }
+    >div{
+        cursor: pointer;
+        border: 4px solid map-get($secondary, 2);  ;
+        border-radius: 45px;
+        padding: 1em;
+        margin-top: 2em;
+        
+        >h2{
+            margin : 0;  
+        }
+        >p{
+            &::before{
+                content: "• • • •";
+                display: block; /* Assure que le pseudo-élément ait une largeur et une hauteur */
+                color : map-get($cFont, 4 )
+                // margin-top: 1em;
+            }
+            text-align: center;
+            margin-top: 0.5em;
+            display: none;
+        }
+        >ul{
+            margin-top: 1em;
+        }
+    }  
+}
+
+
+

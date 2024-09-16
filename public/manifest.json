@@ -1,0 +1,16 @@
+{
+    "name": "Concours Thé Tip Top",
+    "short_name": "Concours Thé Tip Top",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "Rejoignez le concours Thé Tip Top et courez la chance de gagner un an de thé et plus, d'une valeur de 360€. Inscrivez-vous pour gagner !",
+    "icons": [
+      {
+        "src": "images/LogoVersion1.webp",
+        "sizes": "192x192",
+        "type": "image/webp"
+      }
+    ]
+  }
+  

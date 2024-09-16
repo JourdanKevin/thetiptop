@@ -1,0 +1,56 @@
+.cookie{
+    display: block;
+    background-color: map-get($primary, 2);
+    color: map-get($cFont, 2);
+    
+    >div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto; 
+        padding: 1em 0;           
+        width: 80%;
+        @media (max-width: 1000px) {                
+            padding: 1vw;   
+         }   
+            
+        p{
+            color: inherit;
+            @media (max-width: 1000px) {                
+                font-size: 3vw;   
+                max-width: 50%;
+             }   
+        }
+        button{
+            font-size: map-get($size, 'middle');
+            font-weight: bold;
+            @media (max-width: 1000px) {                
+                font-size: 3vw;
+                margin-left: 1vw;
+             }   
+        } 
+        #refuse-cookie {
+            border: 4px solid map-get($refuse, 1);   
+            color : map-get($refuse, 1); 
+            @media (max-width: 1000px) {                
+                border: 0.5vw solid map-get($refuse, 1);   
+                color : map-get($refuse, 1); 
+             }  
+        }    
+        #accept-cookie{
+            // background-color: map-get($accept, 1);  
+            @media (max-width: 1000px) {                
+                border: 0.5vw solid map-get($accept, 1);  
+                color : map-get($accept, 1);
+             }                
+        }
+        a{
+            margin: 0 1em;
+            @media (max-width: 1000px) {                
+                font-size: 3vw;
+                margin: 0 2.3em;
+             }       
+        }       
+    }    
+}

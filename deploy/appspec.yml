@@ -1,0 +1,47 @@
+version: 0.0
+os: linux
+
+file_exists_behavior: OVERWRITE
+
+files:
+  - source: docker-compose.yml
+    destination: /home/the_tip_top
+  - source: scripts
+    destination: /home/the_tip_top/scripts
+  - source: nginx
+    destination: /home/the_tip_top/nginx
+  - source: sudoers
+    destination: /etc/sudoers.d
+
+permissions:
+  - object: /home/the_tip_top
+    owner: the_tip_top
+    type:
+      - directory
+  - object: /home/the_tip_top/docker-compose.yml
+    owner: the_tip_top
+    type:
+      - file    
+  - object: /home/the_tip_top/nginx
+    owner: the_tip_top
+    type:
+      - file
+  - object: /home/the_tip_top/scripts
+    owner: the_tip_top
+    mode: 755
+    type:
+      - file
+
+hooks:
+  ApplicationStop:
+    - location: scripts/stop.sh
+      timeout: 300    
+  AfterInstall:
+    - location: scripts/docker_install.sh
+      timeout: 300
+    - location: scripts/get_certificate.sh
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 300
+      runas: the_tip_top

@@ -1,0 +1,30 @@
+#app{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.home{
+    width: 100%;
+    >div{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 5rem 0;
+            >img{
+                width: 350px;
+                padding: 20px;
+                @media (max-width: 1000px) {                
+                    width: 100%;    
+                }
+            }
+        
+    }
+    .btn{
+        padding: 0.8rem 4rem;
+        font-size: map-get($size , large );
+    }
+    
+}

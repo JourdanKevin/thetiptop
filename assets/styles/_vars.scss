@@ -1,0 +1,42 @@
+$primary: (
+  1 : #907E4B,
+  2 : #79512C,
+  3 : #3a321d,
+  4 : #F8F5F0,
+  5 : #BBB08E,
+  6 : #91754C,
+  7 : #37270F
+  
+);
+$secondary:(
+  1 : #5C8D1D,
+  2 : #D9DBC2
+);
+
+$accept:(
+  1:#5C8D1D
+);
+$refuse:(
+  1:#C90000
+);
+
+$cFont:(
+  1 : #3a321d,
+  2 : #FFF6D3,
+  3 : #E8E1CF,
+  4 : #D9DBC2,
+  5: #5C8D1D,
+  6 : #EFEBE3,
+  7 : #C90000
+);
+
+$font1 : 'Poppins', sans-serif;
+$font:(
+  1 : $font1,
+);
+
+$size: (
+  small: 0.75rem,
+  middle: 1rem,
+  large: 1.25rem
+);

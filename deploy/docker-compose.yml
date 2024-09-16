@@ -1,0 +1,50 @@
+version: '3'
+services:
+  front:
+    image: public.ecr.aws/g4p6u3n1/the_tip_top_api:<IMAGE_NAME>
+    ports:
+      - 9000
+    volumes:
+      - TheTipTop_Front:/var/www/html
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - front
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/log:/var/log/nginx
+      - TheTipTop_Front:/var/www/html
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro  
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    ports:
+      - 9100:9100   
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+  
+  nginx-export:
+    image: nginx/nginx-prometheus-exporter
+    ports: 
+      - 9113:9113
+    command:
+      - "-nginx.scrape-uri=https://<SERVER_NAME>/nginx_status"
+    depends_on:
+      - nginx
+      - node-exporter
+volumes:
+  TheTipTop_Front:

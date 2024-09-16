@@ -1,0 +1,32 @@
+version: 0.2
+ 
+phases:
+  install:
+    runtime-versions:
+      php: 8.2
+    commands:
+      - sudo chmod +x -R ./deploy/scripts
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/g4p6u3n1
+      - ./deploy/scripts/install.sh
+    on-failure: ABORT
+  pre_build:
+    commands:
+      - ./deploy/scripts/preBuild.sh
+  build:
+    commands:
+      - ./deploy/scripts/build.sh
+    on-failure: ABORT
+  post_build:
+    on-failure: ABORT
+    commands:
+      - ./deploy/scripts/postBuild.sh
+    
+artifacts:
+  files: './deploy/**/*'
+  name: TheTipTop_API/build/$(echo "$BRANCH_NAME" | cut -d'/' -f3 | sed 's/"//g' )
+
+reports:
+  arn:aws:codebuild:eu-west-3:119728501389:report-group/TheTipTop_API:
+    files:
+      - build/reports.xml
+    file-format: JunitXml

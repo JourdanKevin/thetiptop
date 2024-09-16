@@ -1,0 +1,88 @@
+header { 
+    background-color: map-get($primary, 6);
+    box-shadow: 0 0 15px map-get($primary, 7);
+    margin-bottom: 3em;
+    nav {  
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        width: 95%;
+        padding: 0.1em;        
+        .logo>img {
+            height: 6em;
+        }
+        .hamburger, .nav-links{
+            display: none;
+    
+        }
+        .hamburger {
+        
+            font-size: 2.5em;
+            background: none;
+            padding: 0px;
+            color: #E8E1CF;
+            border: none;
+            cursor: pointer;
+            z-index: 2; // Assurez-vous que le menu est sous le hamburger
+
+            @media (max-width: 1000px) {
+                
+                display: flex;
+
+            }
+        }
+
+        .nav-links {
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            width: 150px;
+            top: 100px;
+            padding: 15px;
+            border-radius: 0px 0px 30px 30px;
+            background-color: map-get($primary, 6); // Couleur d'arrière-plan
+            transform: translateY(100%);
+            transition: transform 9s ease-in-out;
+            box-shadow: -15px 15px 15px -15px map-get($primary, 7);
+
+            z-index: 1; // Assurez-vous que le menu est sous le hamburger
+            >a {
+                padding: 5px;
+            }
+
+            &.open {
+                transform: translateY(0); // Affiche le menu
+                display: flex;
+            }
+            /* autres styles pour les liens */
+        }
+
+        div {            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 50em;
+            a {
+                font-weight: bold;
+                letter-spacing: 0.1em;
+                font-size: 1.1em;
+                color: map-get($cFont, 3);
+            }
+
+            @media (max-width: 1000px) {
+            
+                    display: none; /* Cacher le menu par défaut */
+                    flex-direction: column;
+                    /* autres styles spécifiques aux mobiles */
+
+            
+                /* Style pour le menu hamburger (à ajouter) */
+            }
+
+        }
+    }    
+}
